@@ -14,11 +14,11 @@
 
   <script>
     // make an HTTP request to the weather API to retrieve the data
-    const response = fetch('https://weather-api.com/api/v1/data?city=New+York')
+    const response = fetch('https://www.metservice.com/publicData/localObs_Christchurch')
       .then(response => response.json())
       .then(data => {
         // extract the temperature, humidity, and wind speed from the response
-        const temperature = data.temperature;
+        const temperature = threeHour.temp;
         const humidity = data.humidity;
         const windSpeed = data.wind_speed;
 
