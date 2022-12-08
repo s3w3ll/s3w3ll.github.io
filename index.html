@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Weather Data</title>
+  <style>
+    /* define the styles for the page here */
+  </style>
+</head>
+<body>
+  <h1>Weather Data</h1>
+  <p>Current temperature: <span id="temperature"></span></p>
+  <p>Current humidity: <span id="humidity"></span></p>
+  <p>Current wind speed: <span id="wind-speed"></span></p>
+
+  <script>
+    // make an HTTP request to the weather API to retrieve the data
+    const response = fetch('https://weather-api.com/api/v1/data?city=New+York')
+      .then(response => response.json())
+      .then(data => {
+        // extract the temperature, humidity, and wind speed from the response
+        const temperature = data.temperature;
+        const humidity = data.humidity;
+        const windSpeed = data.wind_speed;
+
+        // insert the data into the page
+        document.getElementById('temperature').innerHTML = temperature;
+        document.getElementById('humidity').innerHTML = humidity;
+        document.getElementById('wind-speed').innerHTML = windSpeed;
+      });
+  </script>
+</body>
+</html>
