@@ -14,7 +14,7 @@
 
   <script>
     // make an HTTP request to the weather API to retrieve the data
-    const response = fetch('https://www.metservice.com/publicData/localObs_Christchurch')
+    const response = fetch('https://www.metservice.com/publicData/localObs_Christchurch' { mode: 'Access-Control-Allow-Origin', '*'})
       .then(response => response.json())
       .then(data => {
         // extract the temperature, humidity, and wind speed from the response
