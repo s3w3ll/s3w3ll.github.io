@@ -18,7 +18,7 @@
       .then(response => response.json())
       .then(data => {
         // extract the temperature, humidity, and wind speed from the response
-        const temperature = threeHour.temp;
+        const temperature = data.threeHour.temp;
         const humidity = data.humidity;
         const windSpeed = data.wind_speed;
 
